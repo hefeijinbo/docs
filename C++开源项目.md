@@ -1,6 +1,15 @@
-   #STL：C++标准模板库，呵呵，它也是开源的嘛。
+开源网站
+www.open-std.org: C++标准白皮书   
 
-   boost：C++准标准库，它是强大地，江湖称之“千锤百炼”。
+www.opensource.org
+gnu.org
+推动开源运动的两个主要网站, 解释了它们的哲学,并提供了有关获得开源软件以及为开源软件开发做贡献的信息
+
+
+   
+   #STL：C++标准模板库，呵呵，它也是开源的嘛。 https://gcc.gnu.org/git/gcc.git  https://github.com/gcc-mirror/gcc
+
+   boost：C++准标准库，它是强大地，江湖称之“千锤百炼”。 www.boost.org 可移植的免费C++源代码哭
 
    iconv /iconvpp ： (C形式的编码转换函数库，
 
