@@ -294,7 +294,72 @@ int compare(const voide *arg1, const void *arg2)
 涉及概述.avi
 总结.avi
 ```
+qsort函数对指定数组中的元素进行排序,当然,数组元素也可以是其他类型,例如 int 类型, 在进行排序的时候,qsort函数会调用compare函数对两个数组进行比较,这就是回调函数的盖帘,回调函数compare 负责调用,以后还会遇到系统的回调函数
 
+数组元素排序完成后,二分查找一个数组元素就很快了,这就需要使用 bsearch 函数或安全版本 bsearch_s 函数
+
+```
+void *bsearch(
+    const void *key , //要查找的数据
+    const void *base, // 要从中进行查找的数组
+    size_t num, // 被查找数组的
+    size_t width, //每个数组元素的长度
+    int (*compare)(const void *key, const void *datum);
+)
+```
+函数使用二分查找法从数组元素 base[0] - base[num-1]中查找参数key指向的数组
+
+# 字符串与数组类型的相互转换
+
+将字符串转换为多精度浮点型的函数使 atof 和 _wtof,通用版本是 _ttof;
+
+```
+double atof(const char *str);
+double _wtof(const wchat_t *str);
+```
+
+将字符串转换成整形或长整型的函数使 atof, _wtoi 或 atol, _wtol, 通用版本是 _ttoi 或_ttol
+
+```
+int atoi(const char *str);
+int _wtoi(const wchat_t *str);
+long atol(const char *str);
+long _wtol(const wchat_t *str);
+```
+将字符串转换成64位整形或long long 整形的函数使 _atoi64, _wtoi64 或 atoll _wtoll, 通用版本是 _ttoi64 或 _ttoll
+# 格式化字符串
+printf 和 wprintf 函数用于向标准输出设备按指定格式输出信息, 函数声明如下:
+```
+int printf(const char *format [, argument]...);
+int wprintt(const wchar_t *format [,argument]...);
+```
+_tprintf 使 printf 和wprintf 的通用版本,如果定义了 _UNICODE,则_tprint 会被转换成 wprintf, 否则位 printf, 输出中文的时候需要 setlocale(LC_ALL, "chs");
+
+# Windows 中的一些字符串函数
+lstrlen 计算字符串长度
+```
+int WINAPI lstrlen(LPCSTR lpString);
+```
+- lcstcpy 与StringCChCopy
+用于字符串复制,不建议使用这个函数,可能会造成缓冲区溢出,缓冲区溢出使应用程序中许多安全问题的根源,在坏的情况下,如果lpstring1 是基于堆栈的缓冲区,则缓冲区溢出会导致攻击者向进程中注入可执行代码
+
+除了新的安全字符串函数, C/C++ 运行库还新增了一些函数,用于在执行字符串处理时提供更多控制
+
+例如 StringCchCopy
+
+# Windows 中 ANSI 与 Unicode 版本函数
+
+例如 MessageBox 有 MessageBoxA 和 MessageBoxW 两个版本
+```
+int WINAPI MessageBoxA(HWND hwnd, LPCSTR lptext, LPCSTR lpCatption, UINT uType);
+int WINAPI MessageBoxW(HWND hwnd, LPCWSTR lptext, LPCWSTR lpCatption, UINT uType);
+```
+MessageBxo 实际是一个宏
+```
+# ifdef UNICODE
+int WINAPI MessageBoxA(HWND hwnd, LPCSTR lptext, LPCSTR lpCatption, UINT uType);
+int WINAPI MessageBoxW(HWND hwnd, LPCWSTR lptext, LPCWSTR lpCatption, UINT uType);
+```
 
 # 窗口相关
 RegisterClassEx 注册窗口类
