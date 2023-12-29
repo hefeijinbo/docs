@@ -248,6 +248,53 @@ char* strtok_s(
 
 )
 ```
+# 字符串快速排序
+进行字符串快速排序的函数是qsort, 安全版本是 qsort_s
+```
+void qsort (
+    void *base,// 待排序的字符串数组
+    size_t num, // 待排序的字符串数组元素的个数
+    size_t width, //以字节位单位,各元素占用的空间大小
+    int compare(const void *,const void*);//对字符串进行比较的回调函数
+)
+
+void qsort_s (
+    void *base,// 待排序的字符串数组
+    size_t num, // 待排序的字符串数组元素的个数
+    size_t width, //以字节位单位,各元素占用的空间大小
+    int compare(const void *,const void*);//对字符串进行比较的回调函数
+    void *context;; 上面回调函数的参数
+)
+```
+这个函数对初学者比较复杂,因为涉及回调函数的盖帘,先看示例再做解释吧, 在此以qsort 函数为例
+```
+LPTSTR arrStr[] = {
+    TEXT("架构风格管理.avi"),
+    TEXT("模块化内聚.avi"),
+    TEXT("总结.aai"),
+    TEXT("管理依赖.avi"),
+    TEXT("涉及概述.avi"),
+    TEXT("分布式.avi")
+};
+qsort(arrStr, _countof(arrStr),sizeof(LPTSTR), compare);
+for (int i =0; i< _countof(arrStr);i++)
+    _tprintf(TEXT("%s\n", arrStr[i]));
+return 0;
+
+int compare(const voide *arg1, const void *arg2)
+{
+    // 因为 arg1, arg2 是数组元素的指针,所以需要*(LPTSTR*)
+    return _tcscoll(*(LPTSTR *)arg1, *(LPTSTR *)arg2);
+}
+//输出结果:
+分布式.avi
+资源管理.avi
+管理依赖.avi
+合理内聚.avi
+涉及概述.avi
+总结.avi
+```
+
 
 # 窗口相关
 RegisterClassEx 注册窗口类
