@@ -143,6 +143,16 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLi
 # 常用字符串处理函数
 1. 获取字符串长度
 strlen wcslen(针对宽字符,返回宽字符数量)
+
+```
+size_t strlen(const char *str); // char 类型字符串指针
+size_t wcslen(const wchar_t *str); // wchar_t 类型字符串指针
+```
+```
+CHAR str[] = "c语言"; // 5 C占用1个字节, 语言占用4字节
+WCHAR wstr[] = L"C语言"; // 3 3个宽字符
+_tprintf(TEXT("strlen(str) =%d, wcslen(wstr) = %d\n", strlen(str), wcslen(wstr)));
+```
 它两的`通用版本`是 `_tcslen`
 ```
 #ifdef _UNICODE
@@ -154,11 +164,33 @@ strlen wcslen(针对宽字符,返回宽字符数量)
 # 查找字符串首次出现的指定`字符`
 strchr(首次出现), 通用版本是 _tcschar
 strrchr(最后出现), 通用版本是 _tcsrchr
-
+```
+TCHAR szStr[] = TEXT("Windows API 最为强大的编程语言");
+LPTSTR lp = _tcschr(szStr, TEXT('最'));
+setlocale(LC_ALL, "chs");// 用_tprintf函数输出中文字符的时候,需要调用本函数来设置区域
+_tprintf(TEXT("szStr 的地址: %p lp的地址: %p \n", szStr, lp);
+_tprintf(TEXT("szStr = %s lp = %s\n", szStr, lp));
+// Unicode 字符集
+// szStr 的地址 0014FCC0 lp的地址: 0014FCD6
+// szStr = Windows API 是最强大的编程语言 lp = 最为强大的编程语言
+// 多字符字符集
+// szStr 的地址: 003EFE38 lp的地址 003EFE44
+// szStr = Windows API 是最强大的编程语言 lp = 最为强大的编程语言
+```
+不管是设置 Unicode 字符集,还是多字节字符集, 都是计算 "Windows API 是"占用了多少字节的问题, 在两种情况下,都能得到正确的结果
+```
+注意: 用 _tprintf 函数输出中文字符的时候,需要调用 setlocale 函数设置区域为 chs
+```
 # 在一个字符串中查找另一个`字符串``
 strstr
 wcsstr(宽字符)
+```
+char *strstr(const char *str // 在这个字符串中搜索
+, const char *strSearch) // 要搜索的字符串
 
+wchar_t *wcsstr(const wchar_t *str, const wchar_t *strSearch);
+```
+如果 strSearch 是 str 子串,则返回 strSearch 在 str 中首次出现的地址, 如果不是子串,则返回 NULL
 通用版本:
 _tcsstr
 
