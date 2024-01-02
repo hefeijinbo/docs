@@ -5,7 +5,7 @@
 
 窗口包含如下元素
 
-![Alt text](images/image-7.png)
+![Alt text](3F2F1D6824238F8D067E2AB9CFD09B09.png)
 1. 标题栏和窗口标题
 2. 系统菜单按钮
 3. 菜单栏
