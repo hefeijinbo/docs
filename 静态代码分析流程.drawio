@@ -1,0 +1,62 @@
+<mxfile host="Electron" modified="2024-03-07T01:01:12.762Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="DSPIRWdwHfz7nDUh_PFg" version="23.1.5" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="795" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="eusu-MG7QW1QVJ18kZh1-0" target="eusu-MG7QW1QVJ18kZh1-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-7" value="1.push code" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eusu-MG7QW1QVJ18kZh1-6">
+          <mxGeometry x="0.0507" y="1" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-0" value="Developer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="130" y="200" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="eusu-MG7QW1QVJ18kZh1-4" target="eusu-MG7QW1QVJ18kZh1-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-9" value="2. Event notify" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eusu-MG7QW1QVJ18kZh1-8">
+          <mxGeometry x="0.1063" y="-3" relative="1" as="geometry">
+            <mxPoint y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-4" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Half_Rack_ToR.svg;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="260" y="172.7" width="88.2" height="114.6" as="geometry" />
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-5" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Half_Rack_ToR.svg;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="530" y="172.7" width="88.2" height="114.6" as="geometry" />
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.005;exitY=0.792;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="eusu-MG7QW1QVJ18kZh1-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="270" as="sourcePoint" />
+            <mxPoint x="350" y="263" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-11" value="3. pull code" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eusu-MG7QW1QVJ18kZh1-10">
+          <mxGeometry x="0.0379" y="-3" relative="1" as="geometry">
+            <mxPoint x="8" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-34" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="340" as="sourcePoint" />
+            <mxPoint x="160" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="340" />
+              <mxPoint x="570" y="290" />
+              <mxPoint x="450" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eusu-MG7QW1QVJ18kZh1-35" value="4. E-mail notify" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eusu-MG7QW1QVJ18kZh1-34">
+          <mxGeometry x="0.3191" y="3" relative="1" as="geometry">
+            <mxPoint x="3" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
